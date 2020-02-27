@@ -1,4 +1,4 @@
-# Exercise notebooks from Kaggle micro-lessons
+# Exercise notebooks from Kaggle micro courses https://www.kaggle.com/learn/overview
 # Contents
 
 ## SQL
@@ -55,3 +55,9 @@ safe_query_job.to_dataframe()
 * GROUP BY, HAVING, and COUNT
 GROUP BY in SQL is similar to [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) in pandas. **But BigQuery works quickly with far larger datasets.**
 
+COUNT() is an example of an aggregate function, which takes many values and returns one. (Other examples of aggregate functions include SUM(), AVG(), MIN(), and MAX().) If you pass COUNT() the name of a column, it will return the number of entries in that column.
+
+GROUP BY takes the name of one or more columns, and treats all rows with the same value in that column as a single group when you apply aggregate functions like COUNT().
+
+HAVING is used in combination with GROUP BY to ignore groups that don't meet certain criteria:
+![having example](https://i.imgur.com/2ImXfHQ.png) 
