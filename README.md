@@ -51,3 +51,7 @@ safe_query_job = client.query(query, job_config=safe_config)
 # API request - try to run the query, and return a pandas DataFrame
 safe_query_job.to_dataframe()
 ```
+
+* GROUP BY, HAVING, and COUNT
+GROUP BY in SQL is similar to [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) in pandas. **But BigQuery works quickly with far larger datasets.**
+
