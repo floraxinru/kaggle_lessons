@@ -1,4 +1,5 @@
-# Exercise notebooks from Kaggle micro courses 
+# Exercise notebooks from Kaggle micro courses
+for quick review and interview prep: 
 https://www.kaggle.com/learn/overview
 # Contents
 
