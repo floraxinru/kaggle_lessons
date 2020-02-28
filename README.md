@@ -1,15 +1,16 @@
-# Exercise notebooks from Kaggle micro courses 
+# Exercise notebooks from Kaggle micro courses
+for quick review and interview prep: 
 https://www.kaggle.com/learn/overview
 # Contents
 
 ## SQL
 ### Intro to SQL
-* SQL and BigQuery
+* SQL and BigQuery *(in-progress)*
 
 ### Advanced SQL
 
 ---
-
+*(upcoming)*
 ## Python
 ## Pandas
 ## Data Visualization
@@ -56,7 +57,8 @@ safe_query_job.to_dataframe()
 * GROUP BY, HAVING, and COUNT
 GROUP BY in SQL is similar to [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) in pandas. **But BigQuery works quickly with far larger datasets.**
 
-COUNT() is an example of an aggregate function, which takes many values and returns one. (Other examples of aggregate functions include SUM(), AVG(), MIN(), and MAX().) If you pass COUNT() the name of a column, it will return the number of entries in that column.
+COUNT() is an example of an aggregate function, which takes many values and returns one. (Other examples of aggregate functions include SUM(), AVG(), MIN(), and MAX().) If you pass COUNT() the name of a column, it will return the number of entries in that column. 
+*Use COUNT(1) to count the rows in each group* -- More readable, also scans less data than if supplied column names.
 
 GROUP BY takes the name of one or more columns, and treats all rows with the same value in that column as a single group when you apply aggregate functions like COUNT().
 
@@ -64,3 +66,5 @@ HAVING is used in combination with GROUP BY to ignore groups that don't meet cer
 ![having example](https://i.imgur.com/2ImXfHQ.png) (image source: https://www.kaggle.com/dansbecker/group-by-having-count)
 
 It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function.
+
+
