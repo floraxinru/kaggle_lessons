@@ -4,12 +4,12 @@ https://www.kaggle.com/learn/overview
 
 ## SQL
 ### Intro to SQL
-* SQL and BigQuery
+* SQL and BigQuery *(in-progress)*
 
 ### Advanced SQL
 
 ---
-
+*(upcoming)*
 ## Python
 ## Pandas
 ## Data Visualization
