@@ -22,6 +22,9 @@ https://www.kaggle.com/learn/overview
 ----
 
 ## Notes
+
+## SQL
+### Intro to SQL
 * SQL and Google BigQuery
 
 When working on big datasets, can estimate the size of any query before running it. Here is an example using the (very large!) Hacker News dataset. To see how much data a query will scan, we create a QueryJobConfig object and set the dry_run parameter to True.
