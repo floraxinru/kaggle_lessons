@@ -62,9 +62,19 @@ COUNT() is an example of an aggregate function, which takes many values and retu
 
 GROUP BY takes the name of one or more columns, and treats all rows with the same value in that column as a single group when you apply aggregate functions like COUNT().
 
-HAVING is used in combination with GROUP BY to ignore groups that don't meet certain criteria:
+*HAVING is used in combination with GROUP BY* to ignore groups that don't meet certain criteria. In this example, only include groups that have more than one ID in them:
 ![having example](https://i.imgur.com/2ImXfHQ.png) (image source: https://www.kaggle.com/dansbecker/group-by-having-count)
 
-It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function.
+        Another example (*doesn't work if put COUNT(1) >= 175 under the WHERE clause*):
+        ```
+         SELECT indicator_code, indicator_name, COUNT(1) AS num_rows
+                   FROM `bigquery-public-data.world_bank_intl_education.international_education`
+                   WHERE year = 2016
+                   GROUP BY indicator_name, indicator_code
+                   HAVING COUNT(1) >= 175
+                   ORDER BY COUNT(1) DESC
+        ```
+
+Note: It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function.
 
 
