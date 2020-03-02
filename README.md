@@ -58,6 +58,7 @@ safe_query_job.to_dataframe()
 ```
 
 * GROUP BY, HAVING, and COUNT
+
 GROUP BY in SQL is similar to [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) in pandas. **But BigQuery works quickly with far larger datasets.**
 
 COUNT() is an example of an aggregate function, which takes many values and returns one. (Other examples of aggregate functions include SUM(), AVG(), MIN(), and MAX().) If you pass COUNT() the name of a column, it will return the number of entries in that column. 
@@ -80,4 +81,17 @@ GROUP BY takes the name of one or more columns, and treats all rows with the sam
 
 Note: It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function.
 
+On its own, AS is a convenient way to clean up the data returned by your query. It's even more powerful when combined with WITH in what's called a "common table expression".
 
+* AS and WITH
+
+A **common table expression (or CTE)** is a temporary table that you return within your query. CTEs are helpful for splitting your queries into readable chunks, and you can write queries against them.
+![CTE example](https://i.imgur.com/3xQZM4p.png)
+The WITH...AS incomplete query creates a CTE that we can then refer to (as Seniors) while writing the rest of the query.
+We can finish the query by pulling the information that we want from the CTE (return all the IDs in this example). 
+
+It's important to note that *CTEs only exist inside the query where you create them, and you can't reference them in later queries.* So, any query that uses a CTE is always broken into two parts: 
+
+        - first, we create the CTE, and then 
+        
+        - we write a query that uses the CTE.
