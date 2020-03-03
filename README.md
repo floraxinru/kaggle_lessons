@@ -95,3 +95,5 @@ It's important to note that *CTEs only exist inside the query where you create t
         - first, we create the CTE, and then 
         
         - we write a query that uses the CTE.
+
+Common table expressions (CTEs) let you shift a lot of your data cleaning into SQL. That's an especially good thing in the case of **BigQuery, because it is vastly faster than doing the work in Pandas.**
