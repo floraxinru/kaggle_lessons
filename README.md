@@ -62,7 +62,8 @@ safe_query_job.to_dataframe()
 GROUP BY in SQL is similar to [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) in pandas. **But BigQuery works quickly with far larger datasets.**
 
 COUNT() is an example of an aggregate function, which takes many values and returns one. (Other examples of aggregate functions include SUM(), AVG(), MIN(), and MAX().) If you pass COUNT() the name of a column, it will return the number of entries in that column. 
-*Use COUNT(1) to count the rows in each group* -- More readable, also scans less data than if supplied column names.
+
+***Use COUNT(1) to count the rows in each group*** -- More readable, also scans less data than if supplied column names.
 
 GROUP BY takes the name of one or more columns, and treats all rows with the same value in that column as a single group when you apply aggregate functions like COUNT().
 
@@ -96,4 +97,19 @@ It's important to note that *CTEs only exist inside the query where you create t
         
         - we write a query that uses the CTE.
 
-Common table expressions (CTEs) let you shift a lot of your data cleaning into SQL. That's an especially good thing in the case of **BigQuery, because it is vastly faster than doing the work in Pandas.**
+Common table expressions (CTEs) let you *shift a lot of your data cleaning into SQL*. That's an especially good thing in the case of **BigQuery, because it is vastly faster than doing the work in Pandas.** 
+
+- Exercise: As & With notebook has a lot more data exploration than previous ones: 
+
+- The SQL code to **SELECT** the year from `trip_start_timestamp` is <code>SELECT EXTRACT(YEAR FROM trip_start_timestamp)</code>
+
+- The **FROM** field can be a little tricky. The format is:
+    1. A backick (the symbol \`).
+    2. The project name. In this case it is `bigquery-public-data`.
+    3. A period.
+    4. The dataset name. In this case, it is `chicago_taxi_trips`.
+    5. A period.
+    6. The table name.
+    7. A backtick (the symbol \`).
+    
+* Joining Data
