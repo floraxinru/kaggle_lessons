@@ -99,17 +99,17 @@ It's important to note that *CTEs only exist inside the query where you create t
 
 Common table expressions (CTEs) let you *shift a lot of your data cleaning into SQL*. That's an especially good thing in the case of **BigQuery, because it is vastly faster than doing the work in Pandas.** 
 
-- Exercise: As & With notebook has a lot more data exploration than previous ones: 
+Exercise (AS & WITH notebook has a lot more data exploration than previous ones): 
 
-- The SQL code to **SELECT** the year from `trip_start_timestamp` is <code>SELECT EXTRACT(YEAR FROM trip_start_timestamp)</code>
+        - The SQL code to **SELECT** the year from `trip_start_timestamp` is <code>SELECT EXTRACT(YEAR FROM trip_start_timestamp)</code>
 
-- The **FROM** field can be a little tricky. The format is:
-    1. A backick (the symbol \`).
-    2. The project name. In this case it is `bigquery-public-data`.
-    3. A period.
-    4. The dataset name. In this case, it is `chicago_taxi_trips`.
-    5. A period.
-    6. The table name.
-    7. A backtick (the symbol \`).
-    
+        - The **FROM** field can be a little tricky. The format is:
+            1. A backick (the symbol \`).
+            2. The project name. In this case it is `bigquery-public-data`.
+            3. A period.
+            4. The dataset name. In this case, it is `chicago_taxi_trips`.
+            5. A period.
+            6. The table name.
+            7. A backtick (the symbol \`).
+
 * Joining Data
