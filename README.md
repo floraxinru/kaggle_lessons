@@ -113,7 +113,7 @@ Exercise (AS & WITH notebook has a lot more data exploration than previous ones,
             7. A backtick (the symbol \`).
            
 
-* Joining Data
+* JOIN Data
 Example joining on PetID column, also using aliases for table names
 ![JOIN example](https://i.imgur.com/fLlng42.png)
 
@@ -125,3 +125,12 @@ We begin with the JOIN (highlighted in blue above). This specifies the sources o
 Next, we'll talk about SELECT and GROUP BY (highlighted in yellow). The GROUP BY breaks the data into a different group for each license, before we COUNT the number of rows in the sample_files table that corresponds to each license. (Remember that you can count the number of rows with COUNT(1).)
 
 Finally, the ORDER BY (highlighted in purple) sorts the results so that licenses with more files appear first.
+
+Can use % as wildcard when selecting rows using text (WHERE column_name LIKE 'text_pattern'):
+```
+query = """
+        SELECT * 
+        FROM `bigquery-public-data.pet_records.pets` 
+        WHERE Name LIKE '%ipl%'
+        """
+```
