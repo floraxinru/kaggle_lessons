@@ -114,3 +114,14 @@ Exercise (AS & WITH notebook has a lot more data exploration than previous ones,
            
 
 * Joining Data
+Example joining on PetID column, also using aliases for table names
+![JOIN example](https://i.imgur.com/fLlng42.png)
+
+> In general, when joining tables, it's a good habit to specify which table each of your columns comes from. That way, you don't have to pull up the schema every time you go back to read the query.
+
+![JOIN example](https://i.imgur.com/QeufD01.png)
+We begin with the JOIN (highlighted in blue above). This specifies the sources of data and how to join them. We use ON to specify that we combine the tables by matching the values in the repo_name columns in the tables.
+
+Next, we'll talk about SELECT and GROUP BY (highlighted in yellow). The GROUP BY breaks the data into a different group for each license, before we COUNT the number of rows in the sample_files table that corresponds to each license. (Remember that you can count the number of rows with COUNT(1).)
+
+Finally, the ORDER BY (highlighted in purple) sorts the results so that licenses with more files appear first.
