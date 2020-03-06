@@ -5,9 +5,10 @@ https://www.kaggle.com/learn/overview
 
 ## SQL
 ### Intro to SQL
-* SQL and BigQuery *(in-progress)*
+* SQL and BigQuery 
 
 ### Advanced SQL
+*(in-progress)*
 
 ---
 *(upcoming)*
