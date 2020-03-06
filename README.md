@@ -95,6 +95,15 @@ order by earnings desc limit 1;
 - max earnings and number of employees with maximum earnings
 ```
 
+*Use CAST AS DECIMAL, ROUND, or TRUNCATE to limit number of decimals:*
+```
+select CAST(MAX(LAT_N) AS DECIMAL (10,4)) from station
+where LAT_N < 137.2345;
+```
+https://stackoverflow.com/questions/2030986/sql-server-cast-and-rounding 
+
+ROUND changes the value, not the type. 
+The CAST() function converts a value (of any type) into a specified datatype.
 
 * AS and WITH
 
