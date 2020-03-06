@@ -4,8 +4,7 @@ https://www.kaggle.com/learn/overview
 # Contents
 
 ## SQL
-### Intro to SQL
-* SQL and BigQuery 
+### Intro to SQL ✅ 
 
 ### Advanced SQL
 *(in-progress)*
