@@ -84,6 +84,18 @@ Note: It doesn't make sense to use GROUP BY without an aggregate function, becau
 
 On its own, AS is a convenient way to clean up the data returned by your query. It's even more powerful when combined with WITH in what's called a "common table expression".
 
+**GROUP BY 1** *means group by first column from SELECT. The same pattern could be used for ORDER BY.* For example:
+```
+select (salary * months)as earnings, count(*) 
+from employee 
+group by 1 
+order by earnings desc limit 1;
+
+- outputs 2 columns: 
+- max earnings and number of employees with maximum earnings
+```
+
+
 * AS and WITH
 
 A **common table expression (or CTE)** is a temporary table that you return within your query. CTEs are helpful for splitting your queries into readable chunks, and you can write queries against them.
