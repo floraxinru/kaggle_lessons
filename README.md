@@ -80,7 +80,7 @@ GROUP BY takes the name of one or more columns, and treats all rows with the sam
                    ORDER BY COUNT(1) DESC
         ```
 
-Note: It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function.
+Note: It doesn't make sense to use GROUP BY without an aggregate function, because GROUP BY tells SQL how to apply aggregate functions (like COUNT()). Similarly, if you have any GROUP BY clause, then all variables must be passed to either a GROUP BY command, or an aggregation function. In other words, use GROUP BY whenever you have functions like avg(), count(), max(), min(), etc. Basically it groups all identical records as single entity based on your selection of column
 
 On its own, AS is a convenient way to clean up the data returned by your query. It's even more powerful when combined with WITH in what's called a "common table expression".
 
@@ -102,7 +102,7 @@ where LAT_N < 137.2345;
 ```
 https://stackoverflow.com/questions/2030986/sql-server-cast-and-rounding 
 
-ROUND changes the value, not the type. 
+ROUND changes the value, not the type. https://www.w3schools.com/sql/func_sqlserver_round.asp 
 The CAST() function converts a value (of any type) into a specified datatype.
 
 * AS and WITH
