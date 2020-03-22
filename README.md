@@ -132,7 +132,8 @@ Exercise (AS & WITH notebook has a lot more data exploration than previous ones,
             5. A period.
             6. The table name.
             7. A backtick (the symbol \`).
-           
+                
+ 
 
 * JOIN Data
 Example joining on PetID column, also using aliases for table names
@@ -155,3 +156,14 @@ query = """
         WHERE Name LIKE '%ipl%'
         """
 ```
+
+
+Another example of aliasing and JOIN:
+```
+SELECT c.*, f.name AS country_name FROM facts as f
+INNER JOIN cities AS c
+ON f.id = c.facts_id
+LIMIT 5;
+```
+-first line, selected f.name column is followed by its own alias, before FROM facts as f (alias of table)
+    
