@@ -167,3 +167,17 @@ LIMIT 5;
 ```
 -first line, selected f.name column is followed by its own alias, before FROM facts as f (alias of table)
     
+    
+The following two queries, one using a left join and one using a right join, produce identical results.
+```
+SELECT f.name country, c.name city
+FROM facts f
+LEFT JOIN cities c ON c.facts_id = f.id
+LIMIT 5;
+
+SELECT f.name country, c.name city
+FROM cities c
+RIGHT JOIN facts f ON f.id = c.facts_id
+LIMIT 5;
+```
+The main reason a right join would be used is when you are joining more than two tables. In these cases, using a right join is preferable because it can avoid restructuring your whole query to join one table. 
